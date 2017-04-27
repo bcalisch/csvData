@@ -1,0 +1,21 @@
+StadiumID,Active,Name,City,State,Country,Capacity,Surface,LeftField,MidLeftField,LeftCenterField,MidLeftCenterField,CenterField,MidRightCenterField,RightCenterField,MidRightField,RightField,GeoLat,GeoLong,Altitude,HomePlateDirection
+1,True,PETCO Park,San Diego,CA,USA,41164,Grass,334,351,367,402,396,403,378,351,322,32.707710,-117.157097,14,180
+2,True,Turner Field,Atlanta,GA,USA,49586,Grass,335,360,380,394,401,394,390,358,330,33.734805,-84.389996,939,150
+3,True,Salt River Fields at Talking Stick,,,,,,,,,,,,,,,,,,
+4,True,Cubs Park,,,,,,,,,,,,,,,,,,
+5,True,JetBlue Park,,,,,,,,,,,,,,,,,,
+6,True,Hammond Stadium,,,,,,,,,,,,,,,,,,
+7,True,Peoria Stadium,,,,,,,,,,,,,,,,,,
+8,True,Citi Field,New York,NY,USA,41922,Grass,335,371,384,394,408,415,378,372,330,40.756337,-73.846043,13,165
+9,True,State Mutual Stadium,,,,,,,,,,,,,,,,,,
+10,True,Progressive Field,Cleveland,OH,USA,37675,Grass,325,369,368,385,405,388,375,364,325,41.496192,-81.685238,673,180
+11,True,NL City,,,,,,,,,,,,,,,,,,
+12,True,TBD,,,,,,,,,,,,,,,,,,
+13,True,AT&amp;T Park,San Francisco,CA,USA,41915,Grass,339,346,382,389,399,399,421,368,309,37.778473,-122.389595,8,90
+14,True,Target Field,Minneapolis,MN,USA,39021,Grass,339,355,377,390,404,392,367,344,328,44.981713,-93.277347,840,105
+15,True,McKechnie Field,,,,,,,,,,,,,,,,,,
+16,True,Louisville Slugger Field,,,,,,,,,,,,,,,,,,
+17,True,Champion Stadium,,,,,,,,,,,,,,,,,,
+18,True,Tropicana Field,St. Petersburg,FL,USA,31042,AstroTurf,315,354,370,410,404,404,370,342,322,27.768160,-82.653465,41,135
+19,True,Miller Park,Milwaukee,WI,USA,41900,Grass,344,359,370,379,400,386,374,354,345,43.027982,-87.971165,602,45
+20,True,AutoZone Park,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,21 @@
+PlayID,InningID,InningNumber,InningHalf,PlayNumber,InningBatterNumber,AwayTeamRuns,HomeTeamRuns,HitterID,PitcherID,HitterTeamID,PitcherTeamID,HitterName,PitcherName,PitcherThrowHand,HitterBatHand,HitterPosition,Outs,Balls,Strikes,PitchNumberThisAtBat,Result,NumberOfOutsOnPlay,RunsBattedIn,AtBat,Strikeout,Walk,Hit,Out,Sacrifice,Error,Updated
+2155301,272154,9,T,68,1,0,5,10000718,10000980,32,4,Jonathan Lucroy,Mark Melancon,R,R,C,0,2,3,7,Strikeout Looking,1,0,True,True,False,False,False,False,False,4/16/2016 9:55:20 PM
+2155306,272154,9,T,69,2,0,5,10000500,10000980,32,4,Chris Carter,Mark Melancon,R,R,1B,1,3,3,6,Strikeout Looking,1,0,True,True,False,False,False,False,False,4/16/2016 9:58:27 PM
+2155317,272154,9,T,70,3,0,5,10000032,10000980,32,4,Aaron Hill,Mark Melancon,R,R,3B,2,3,3,9,Strikeout Looking,1,0,True,True,False,False,False,False,False,4/16/2016 10:02:27 PM
+2155406,272167,6,T,43,1,4,0,10001142,10003191,15,1,Angel Pagan,Adam Liberatore,L,S,LF,0,0,2,3,Lineout,1,0,True,False,False,False,True,False,False,4/16/2016 11:01:23 PM
+2155408,272167,6,T,44,2,4,0,10001368,10003191,15,1,Denard Span,Adam Liberatore,L,L,CF,1,3,2,6,Ground Out,1,0,True,False,False,False,True,False,False,4/16/2016 11:04:23 PM
+2155409,272168,8,T,59,1,2,3,10000732,10001027,14,33,Rickie Weeks,Brandon Maurer,R,R,PH,0,3,1,5,Double,0,0,True,False,False,True,False,False,False,4/16/2016 11:08:18 PM
+2155410,272167,6,T,45,3,4,0,10001136,10003191,15,1,Joe Panik,Adam Liberatore,L,L,2B,2,3,2,8,Fly Out,1,0,True,False,False,False,True,False,False,4/16/2016 11:09:24 PM
+2155411,272168,8,T,60,2,2,3,10000031,10001027,14,33,Paul Goldschmidt,Brandon Maurer,R,R,1B,0,1,1,3,Ground Out,1,0,True,False,False,False,True,False,False,4/16/2016 11:21:18 PM
+2155412,272167,6,B,46,1,4,0,10000273,10000282,1,15,Trayce Thompson,Johnny Cueto,R,R,RF,0,2,3,5,Strikeout Looking,1,0,True,True,False,False,False,False,False,4/16/2016 11:12:27 PM
+2155413,272168,8,T,61,3,2,3,10000040,10001027,14,33,David Peralta,Brandon Maurer,R,L,RF,1,3,3,7,Strikeout Looking,1,0,True,True,False,False,False,False,False,4/17/2016 2:08:41 AM
+2155414,272167,6,B,47,2,4,0,10000638,10000282,1,15,Howie Kendrick,Johnny Cueto,R,R,PH,1,1,2,4,Ground Out,1,0,True,False,False,False,True,False,False,4/16/2016 11:14:27 PM
+2155415,272167,6,B,48,3,4,0,10000959,10000282,1,15,Chase Utley,Johnny Cueto,R,L,2B,2,4,2,6,Walk,0,0,False,False,True,False,False,False,False,4/16/2016 11:17:29 PM
+2155416,272167,6,B,49,4,4,0,10001979,10000282,1,15,Corey Seager,Johnny Cueto,R,L,SS,2,2,3,5,Strikeout Looking,1,0,True,True,False,False,False,False,False,4/16/2016 11:19:24 PM
+2155417,272168,8,T,62,4,3,3,10000209,10001027,14,33,Welington Castillo,Brandon Maurer,R,R,C,2,2,2,5,Fly Out,1,1,True,False,False,False,True,False,False,4/16/2016 11:21:18 PM
+2155418,272168,8,B,63,1,3,3,10001273,10000014,33,14,Adam Rosales,Daniel Hudson,R,R,3B,0,0,2,3,Ground Out,1,0,True,False,False,False,True,False,False,4/16/2016 11:23:20 PM
+2155421,272168,8,B,64,2,3,3,10000091,10000014,33,14,B.J. Upton,Daniel Hudson,R,R,LF,1,3,1,5,Lineout,1,0,True,False,False,False,True,False,False,4/16/2016 11:26:20 PM
+2155423,272168,8,B,65,3,3,3,10001037,10000014,33,14,Derek Norris,Daniel Hudson,R,R,C,2,1,2,4,Ground Out,1,0,True,False,False,False,True,False,False,4/16/2016 11:28:18 PM
+2155548,272185,1,T,1,1,0,0,10001328,10000161,3,25,Michael Saunders,Steven Wright,R,L,LF,0,3,2,6,Ground Out,1,0,True,False,False,False,True,False,False,4/17/2016 1:39:31 PM
+2155557,272185,1,T,2,2,0,0,10001313,10000161,3,25,Josh Donaldson,Steven Wright,R,R,3B,1,2,2,5,Fly Out,1,0,True,False,False,False,True,False,False,4/17/2016 1:41:33 PM
+2155564,272185,1,T,3,3,1,0,10001323,10000161,3,25,Jose Bautista,Steven Wright,R,R,RF,2,1,1,3,Home Run,0,1,True,False,False,True,False,False,False,4/17/2016 1:43:32 PM

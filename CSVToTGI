@@ -1,0 +1,9 @@
+from listMaker import *
+import os
+
+dir = 'C:\tgi\bin\CSV'
+for root, dirs, filenames in os.walk(dir):
+	for f in filenames:
+	print f
+	fullpat = os.path.join(source,f)
+	log = open(fullpath,'r')

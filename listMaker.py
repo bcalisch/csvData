@@ -1,6 +1,7 @@
 import abc
 import csv
 from dbutil import *
+import dbutil
 
 class makeList(object):
     __metaclass__ = abc.ABCMeta
@@ -36,28 +37,40 @@ class listFromCSV(makeList):
     def insertRecords(self):
         """Assuming everything has been set, make insert statment
         using the CSV and COLUMNS """
-        if self.prettyColumns == '' or self.columns == [] or self.CSV == []:
+        if  self.columns == {} or self.CSV == []:
             self.insertStatement = 'INVALID'
             return
-        beginSQL = "insert into "+self.tableName+ " "
+        sql  = ''
+        theCount = 0
+        beginSQL = "insert into Autumn8.dbo.["+self.tableName+ "] "
         for row in self.CSV:
             columnSQL = "("
             valueSQL = "("
             for item, value in row.items():
                 theValue = ''
-                if item in self.columns:
-                    theValue = getValue(self.tableName,item,value)
+                if item in self.columns.keys():
+                    theValue = getValue(self.columns[item], value)
                     if columnSQL == "(":
-                        columnSQL +="`"+item+"`"
+                        #columnSQL = ", `"+ item+"`"
+                        columnSQL +="["+item+"]"
                         valueSQL += theValue
                     else:
-                        columnSQL += ", `"+ item+"`"
+                        columnSQL += ", ["+ item+"]"
+                        #columnSQL += ", `"+ item+"`"
                         valueSQL += ', '+ theValue
             columnSQL += ") VALUES "
             valueSQL += ")"
-            sql = beginSQL + columnSQL + valueSQL
+            sql += beginSQL + columnSQL + valueSQL+ '\n'
+
+            if theCount > 2500:
+                theCount = 0
+                sql = ''
+                print('Just did 2,500 for '+self.tableName)
+            theCount +=1
+        if sql > '':
+            insertRecord(self.tableName, sql)
             #print(sql)
-            insertRecord(sql)
+        
 
     def printFile(self):
         print(self.fileName)
@@ -69,9 +82,12 @@ class listFromCSV(makeList):
             reader = csv.DictReader(open(self.fileName))
             for row in reader:
                 theList.append(row)
+               # print(row)
             self.CSV = theList
+            #print(self.tableName)
             self.columns = getColumns(self.tableName)
-            self.prettyColumns= prettyList(self.columns)
+            #self.prettyColumns= prettyList(self.columns)
+            #print(self.prettyColumns)
         finally:
             return
 

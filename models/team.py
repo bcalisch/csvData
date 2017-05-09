@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String,Boolean, create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
-class team(Base):
+class Team(Base):
     __tablename__='team'
 
     TeamID = Column(Integer, primary_key=True)

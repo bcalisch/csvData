@@ -6,8 +6,8 @@ from sqlalchemy.dialects.mysql import DATETIME
 from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
-class PlayerGame(Base):
-    __tablename__='PlayerGame'
+class PlayerGameProjection(Base):
+    __tablename__='PlayerGameProjection'
 
     StatID = Column(Integer, primary_key = True)
     TeamID = Column(Integer)

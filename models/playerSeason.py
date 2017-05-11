@@ -6,8 +6,8 @@ from sqlalchemy.dialects.mysql import DATETIME
 from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
-class PlayerGame(Base):
-    __tablename__='PlayerGame'
+class PlayerSeason(Base):
+    __tablename__='PlayerSeason'
 
     StatID = Column(Integer, primary_key = True)
     TeamID = Column(Integer)
@@ -20,31 +20,8 @@ class PlayerGame(Base):
     PositionCategory = Column(String(10))
     Started = Column(Integer)
     BattingOrder = Column(Integer)
-    FanDuelSalary = Column(Integer)
-    DraftKingsSalary = Column(Integer)
-    FantasyDataSalary = Column(Integer)
-    YahooSalary = Column(Integer)
-    InjuryStatus = Column(String(50))
-    InjuryBodyPart = Column(String(50))
-    InjuryStartDate = Column(DATETIME)
-    InjuryNotes = Column(String(250))
-    FanDuelPosition = Column(String(10))
-    DraftKingsPosition = Column(String(10))
-    YahooPosition = Column(String(10))
-    OpponentRank = Column(Integer)
-    OpponentPositionrank = Column(Integer)
     GlobalTeamID = Column(Integer)
-    FantasyDraftSalary = Column(Integer)
-    FantasyDraftPosition = Column(String(10))
-    GameID = Column(Integer)
-    OpponentID = Column(Integer)
-    Opponent = Column(String(10))
-    Day = Column(DATETIME)
-    DateTime = Column(DATETIME)
-    HomeOrAway = Column(String(4))
-    IsGameOver = Column(Boolean)
-    GlobalGameID = Column(Integer)
-    GlobalOponentID = Column(Integer)
+    AverageDraftPosition = Column(DECIMAL(11,8))
     Updated = Column(DATETIME)
     Games = Column(Integer)
     FantasyPoints = Column(DECIMAL(11,8))

@@ -6,8 +6,8 @@ from sqlalchemy.dialects.mysql import DATETIME
 from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
-class PlayerGame(Base):
-    __tablename__='PlayerGame'
+class TeamGame(Base):
+    __tablename__='TeamGame'
 
     StatID = Column(Integer, primary_key = True)
     TeamID = Column(Integer)
@@ -16,26 +16,7 @@ class PlayerGame(Base):
     Season = Column(Integer)
     Name = Column(String(50))
     Team = Column(String(10))
-    Position = Column(String(10))
-    PositionCategory = Column(String(10))
-    Started = Column(Integer)
-    BattingOrder = Column(Integer)
-    FanDuelSalary = Column(Integer)
-    DraftKingsSalary = Column(Integer)
-    FantasyDataSalary = Column(Integer)
-    YahooSalary = Column(Integer)
-    InjuryStatus = Column(String(50))
-    InjuryBodyPart = Column(String(50))
-    InjuryStartDate = Column(DATETIME)
-    InjuryNotes = Column(String(250))
-    FanDuelPosition = Column(String(10))
-    DraftKingsPosition = Column(String(10))
-    YahooPosition = Column(String(10))
-    OpponentRank = Column(Integer)
-    OpponentPositionrank = Column(Integer)
     GlobalTeamID = Column(Integer)
-    FantasyDraftSalary = Column(Integer)
-    FantasyDraftPosition = Column(String(10))
     GameID = Column(Integer)
     OpponentID = Column(Integer)
     Opponent = Column(String(10))
@@ -143,7 +124,7 @@ class PlayerGame(Base):
     PitchingInningStarted = Column(Integer)
 
     def __repr__(self):
-        return '<Player: {0} r>'.format(self.Name)
+        return '<Team: {0} r>'.format(self.Name)
 
 engine = create_engine('mysql+pymysql://root:uerbc0707@localhost/baseball', echo = True)
 Base.metadata.create_all(engine)

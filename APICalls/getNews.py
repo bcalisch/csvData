@@ -1,6 +1,6 @@
 import requests
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, update
 import json
 from news import Base, News
 
@@ -30,12 +30,16 @@ try:
     #    headers) #response = conn.getresponse()
     data = r.json()
     for item in data:
-        print('Here\'s one')
-        newData = translateJSON(item)
-        print(News.__table__.columns)
+        theID = item['NewsID']
+        query = session.query(News).filter(News.NewsID == theID).scalar()
+
         newsItem = News(**{k:v for k, v in item.items() if k in News.__table__.columns})
-        session.add(newsItem)
+        if query is None:
+            session.add(newsItem)
+        else:
+            query = session.merge(newsItem)#session.query(News).filter(News.NewsID == theID).update(newsItem)
         session.commit()
+
         #for key, value{j in item.items():
         #    print(str(key)+ ': '+ str(value))
 except Exception as e:

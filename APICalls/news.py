@@ -19,7 +19,8 @@ class News(Base):
     Team = Column(String(50))
 
     def __repr__(self):
-        return '<Title: %r>'%(self.Title)
+        return self.__dict__.keys()
+
 
     #def __init__(self, item):
 

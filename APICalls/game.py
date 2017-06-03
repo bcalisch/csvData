@@ -78,7 +78,7 @@ class Game(Base):
     def __repr__(self):
         return '<Game: %r>'%(self.GameID)
 
-engine = create_engine('mysql+pymysql://root:uerbc0707@localhost/baseball', echo = True)
+engine = create_engine('mysql+pymysql://root:uerbc0707@localhost/baseball', echo = False)
 Base.metadata.create_all(engine)
 
 

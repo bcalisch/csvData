@@ -30,7 +30,7 @@ try:
     #    headers) #response = conn.getresponse()
     data = r.json()
     for item in data:
-        theID = item['NewsID']
+        theid = item['newsid']
         query = session.query(News).filter(News.NewsID == theID).scalar()
 
         newsItem = News(**{k:v for k, v in item.items() if k in News.__table__.columns})

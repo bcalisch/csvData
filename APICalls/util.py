@@ -8,7 +8,7 @@ def translateDate(theDate):
     return year+'-'+theMonth+'-'+theDay
 
 def getSession():
-    engine = create_engine('mysql+pymysql://root:uerbc0707@localhost/baseball',echo = False)
+    engine = create_engine('mysql+pymysql://root:uerbc0707@localhost/baseball?charset=utf8',echo = False)
     Session = sessionmaker(bind=engine)
     session = Session()
     return session

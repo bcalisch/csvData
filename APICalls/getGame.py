@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 import json
 from game import Base, Game
-from util import translateDate
+from util import *
 from datetime import datetime
 
 def getRequest(theDate):
@@ -21,9 +21,7 @@ def getRequest(theDate):
         return None
 
 def getGameByDate(theDate):
-    engine = create_engine('mysql+pymysql://root:uerbc0707@localhost/baseball',echo = False)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = getSession()
     try:
         r = getRequest(theDate)
 #conn.request("GET", "/mlb/v2/JSON/News?%s" % params, "{body}",

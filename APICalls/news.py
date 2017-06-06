@@ -11,7 +11,7 @@ class News(Base):
     Title = Column(String(50))
     Updated = Column(DATETIME)
     Url = Column(String(250))
-    Content = Column(String(250))
+    Content = Column(String(500))
     Source = Column(String(50))
     TermsOfUse = Column(String(250))
     PlayerID = Column(Integer)

@@ -22,7 +22,6 @@ def getAllTeams():
     session = getSession()
     try:
         r = getRequest()
-        print(r.json())
 #conn.request("GET", "/mlb/v2/JSON/News?%s" % params, "{body}",
         #    headers) #response = conn.getresponse()
         if r != None:

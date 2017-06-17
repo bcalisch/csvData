@@ -2,7 +2,7 @@ import requests
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 import json
-from game import Base, Game
+from playerGame import Base, PlayerGame
 from util import *
 from datetime import datetime
 
@@ -12,7 +12,7 @@ def getRequest(theDate):
             'Ocp-Apim-Subscription-Key':'dae600ece2454c71acc62def1108c7dd', }
     params = {}
     print(prettyDate)
-    url = 'https://api.fantasydata.net/mlb/v2/JSON/GamesByDate/{0}'.format(prettyDate)
+    url = 'https://api.fantasydata.net/mlb/v2/JSON/PlayerGameStatsByDate/{0}'.format(prettyDate)
     try:
         r = requests.get(url, headers=headers, params=params)
         return r
@@ -20,11 +20,13 @@ def getRequest(theDate):
         print("[Errno {0}] ".format(e))
         return None
 
-def getRequestByYear(year):
+def getRequestByPlayer(theDate, PlayerID):
+    prettyDate = translateDate(theDate)
     headers = { # Request headers
             'Ocp-Apim-Subscription-Key':'dae600ece2454c71acc62def1108c7dd', }
     params = {}
-    url = 'https://api.fantasydata.net/mlb/v2/JSON/Games/{0}'.format(year)
+    url = 'https://api.fantasydata.net/mlb/v2/JSON/PlayerGameStatsByDate/{0}/{1}'.format(theDate,
+            PlayerID)
     try:
         r = requests.get(url, headers=headers, params=params)
         return r
@@ -32,7 +34,7 @@ def getRequestByYear(year):
         print("[Errno {0}] ".format(e))
         return None
 
-def getGameByDate(theDate):
+def getPlayerGameByDate(theDate):
     session = getSession()
     try:
         r = getRequest(theDate)
@@ -41,9 +43,10 @@ def getGameByDate(theDate):
         if r != None:
             data = r.json()
             for item in data:
-                theID = item['GameID']
-                query = session.query(Game).filter(Game.GameID== theID).scalar()
-                thisGame= Game(**{k:v for k, v in item.items() if k in Game.__table__.columns})
+                theID = item['StatID']
+                query = session.query(PlayerGame).filter(PlayerGame.StatID == theID).scalar()
+                thisGame= PlayerGame(**{k:v for k, v in item.items() if k in
+                    PlayerGame.__table__.columns})
                 if query is None:
                     ''
                     session.add(thisGame)
@@ -58,18 +61,18 @@ def getGameByDate(theDate):
     except Exception as e:
         print("[Errno {0}] ".format(e))
 
-def getGameByYear(year):
+def getPlayerGameByPlayer(theDate, playerID):
     session = getSession()
     try:
-        r = getRequestByYear(year)
+        r = getRequestByPlayer(theDate, playerID)
 #conn.request("GET", "/mlb/v2/JSON/News?%s" % params, "{body}",
         #    headers) #response = conn.getresponse()
         if r != None:
             data = r.json()
             for item in data:
-                theID = item['GameID']
-                query = session.query(Game).filter(Game.GameID== theID).scalar()
-                thisGame= Game(**{k:v for k, v in item.items() if k in Game.__table__.columns})
+                theID = item['StatID']
+                query = session.query(PlayerGame).filter(PlayerGame.StatID== theID).scalar()
+                thisGame= PlayerGame(**{k:v for k, v in item.items() if k in PlayerGame.__table__.columns})
                 if query is None:
                     ''
                     session.add(thisGame)

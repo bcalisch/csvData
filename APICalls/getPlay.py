@@ -2,17 +2,16 @@ import requests
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 import json
-from game import Base, Game
+from play import Base, Play
+from pitch import Base, Pitch
 from util import *
-from datetime import datetime
 
-def getRequest(theDate):
-    prettyDate = translateDate(theDate)
+def getRequest(gameID):
     headers = { # Request headers
             'Ocp-Apim-Subscription-Key':'dae600ece2454c71acc62def1108c7dd', }
     params = {}
     print(prettyDate)
-    url = 'https://api.fantasydata.net/mlb/v2/JSON/GamesByDate/{0}'.format(prettyDate)
+    url = 'https://api.fantasydata.net/mlb/v2/JSON/PlayByPlay/{0}'.format(gameID)
     try:
         r = requests.get(url, headers=headers, params=params)
         return r
@@ -20,22 +19,10 @@ def getRequest(theDate):
         print("[Errno {0}] ".format(e))
         return None
 
-def getRequestByYear(year):
-    headers = { # Request headers
-            'Ocp-Apim-Subscription-Key':'dae600ece2454c71acc62def1108c7dd', }
-    params = {}
-    url = 'https://api.fantasydata.net/mlb/v2/JSON/Games/{0}'.format(year)
-    try:
-        r = requests.get(url, headers=headers, params=params)
-        return r
-    except Exception as e:
-        print("[Errno {0}] ".format(e))
-        return None
-
-def getGameByDate(theDate):
+def getPlaysByGame(gameID):
     session = getSession()
     try:
-        r = getRequest(theDate)
+        r = getRequest(gameID)
 #conn.request("GET", "/mlb/v2/JSON/News?%s" % params, "{body}",
         #    headers) #response = conn.getresponse()
         if r != None:

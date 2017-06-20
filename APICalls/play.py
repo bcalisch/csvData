@@ -8,6 +8,7 @@ Base = declarative_base()
 class Play(Base):
     __tablename__='Play'
     PlayID= Column(Integer, primary_key=True)
+    GameID = Column(Integer)
     InningID = Column(Integer)
     InningNumber = Column(Integer)
     InningHalf = Column(String(1))
@@ -42,7 +43,8 @@ class Play(Base):
     Description = Column(String(250))
 
     def __repr__(self):
-        return '<Description: %r>'%(self.Description)
+        return "Play( GameID = '{0}', PlayID = '{1}')>".format(self.GameID,
+                self.PlayID)
 
 engine = create_engine('mysql+pymysql://root:uerbc0707@localhost/baseball', echo = True)
 Base.metadata.create_all(engine)

@@ -1,8 +1,10 @@
 from datetime import datetime
-from getGame import getGameByDate, getGameByYear
+from getGame import getGameByDate, getGameByYear, getAllGames
 from getPlayerGames import getPlayerGameByDate
 from getPlayerSeason import *
 from getNews import getNewsByDate
+from getStanding import *
+from getPlay import *
 import calendar
 
 def gamesForYear():
@@ -57,3 +59,26 @@ def playerGamesForYear():
 def playerSeason():
     for y in range(2003,2018):
         getPlayerSeason(y)
+
+def getAllPlays():
+    gameList = getAllGames()
+    for game in gameList:
+        if game > 33517 and game < 40000:
+            print(game)
+            getPlaysByGame(game)
+
+def getAllPlays2():
+    gameList = getAllGames()
+    for game in sorted(list(gameList),reverse=True):
+        if game < 38000 and game > 3400:
+            print(game)
+            getPlaysByGame(game)
+
+def getAllStandings():
+    for y in range(2003,2018):
+        getStanding(y)
+
+def getStandingsThisYear():
+    year = datetime.today().year
+    getStanding(year)
+

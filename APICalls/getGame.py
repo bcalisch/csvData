@@ -84,4 +84,11 @@ def getGameByYear(year):
     except Exception as e:
         print("[Errno {0}] ".format(e))
 
+def getAllGames():
+    session = getSession()
+    query = session.query(Game.GameID).filter(Game.GameID >19553)
+    theList = (l[0] for l in query)
+    return theList
+
+
 ####################################
